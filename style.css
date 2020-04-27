@@ -23,23 +23,23 @@ div#header{
 height:100px;
 vertical-align:bottom;
 background-image:url(header2.gif);
-background-color:#AB9F8C;
+/*background-color:#AB9F8C;*/
 text-align:left;
 text-indent:30px;
-border-bottom:5px solid #898989;
-border-top:20px solid #898989;
+/*border-bottom:5px solid #898989;
+border-top:20px solid #898989;*/
 }
 
 div#header a{
 text-decoration:none;
-color:#f2f1ef;
+/*color:#f2f1ef;*/
 /*text-align: center; */
 }
 
 div#header h1{
 margin-top:35px;
 font-size:30px;
-color:#f2f1ef;
+/*color:#f2f1ef;*/
 /*vertical-align:middle;*/
 }
 
