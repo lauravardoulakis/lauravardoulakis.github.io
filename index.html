@@ -75,11 +75,16 @@
     /* HERO */
     .hero {
       display: flex;
-      gap: 36px;
-      align-items: flex-start;
+      flex-direction: column;
       padding: 52px 48px 48px;
       border-bottom: 0.5px solid var(--border);
       max-width: 960px;
+    }
+
+    .hero-body {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
     }
 
     .photo {
@@ -99,7 +104,7 @@
       object-position: center top;
     }
 
-    .hero-text { flex: 1; }
+    .hero-body .hero-text { flex: 1; }
 
     .hero h1 {
       font-family: 'EB Garamond', serif;
@@ -255,8 +260,11 @@
       .nav-links a { font-size: 12px; }
 
       .hero {
-        flex-direction: column;
         padding: 28px 20px 32px;
+      }
+
+      .hero-body {
+        flex-direction: column;
         gap: 20px;
       }
 
@@ -298,15 +306,17 @@
   </nav>
 
   <div class="hero">
-    <div class="hero-text">
-      <h1>Hello, I&rsquo;m Laura.</h1>
-      <p class="bio">I lead user experience research at <a href="https://research.google/people/105160/" target="_blank">Google Research</a>, working at the intersection of human-computer interaction and AI &mdash; with a particular focus on health. My work spans the design and real-world evaluation of AI-powered health technologies, human-centered approaches to AI in clinical settings, and the equity dimensions of AI: ensuring these systems are built with and for communities that have historically been left out of technology development. I hold a Ph.D. in Computer Science from Northeastern University.</p>
-      <div class="hero-links">
-        <a href="publications.html">View publications &rarr;</a>
+    <h1>Hello, I&rsquo;m Laura.</h1>
+    <div class="hero-body">
+      <div class="hero-text">
+        <p class="bio">I lead user experience research at <a href="https://research.google/people/105160/" target="_blank">Google Research</a>, working at the intersection of human-computer interaction and AI &mdash; with a particular focus on health. My work spans the design and real-world evaluation of AI-powered health technologies, human-centered approaches to AI in clinical settings, and the equity dimensions of AI: ensuring these systems are built with and for communities that have historically been left out of technology development. I hold a Ph.D. in Computer Science from Northeastern University.</p>
+        <div class="hero-links">
+          <a href="publications.html">View publications &rarr;</a>
+        </div>
       </div>
-    </div>
-    <div class="photo">
-      <img src="LV.jpg" alt="Laura M. Vardoulakis" />
+      <div class="photo">
+        <img src="LV.jpg" alt="Laura M. Vardoulakis" />
+      </div>
     </div>
   </div>
 
