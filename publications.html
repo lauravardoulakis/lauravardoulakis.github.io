@@ -1,238 +1,723 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
-<title>Laura Pfeifer Vardoulakis - Publications</title>
-<script type="text/javascript">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications &mdash; Laura M. Vardoulakis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-21079558-1']);
-  _gaq.push(['_trackPageview']);
+    :root {
+      --cream: #faf8f4;
+      --ink: #1c1a17;
+      --ink-mid: #5a5650;
+      --ink-light: #9a9590;
+      --border: rgba(28, 26, 23, 0.12);
+      --accent: #2e5fa3;
+      --success-bg: #f0f7ee;
+      --success-text: #2d6a2d;
+      --warning-bg: #fdf6e3;
+      --warning-text: #7a5c00;
+    }
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    html { background: var(--cream); color: var(--ink); }
 
-</script>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 22px 48px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links { display: flex; gap: 28px; }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ink-mid);
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-links a.active {
+      color: var(--ink);
+      border-bottom: 0.5px solid var(--ink);
+      padding-bottom: 1px;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 48px 48px 36px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 960px;
+    }
+
+    .page-header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 30px;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+
+    .page-header p a {
+      color: var(--accent);
+      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .page-header p a:hover { border-color: var(--accent); }
+
+    /* YEAR GROUPS */
+    .year-group { max-width: 960px; }
+
+    .year-heading {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      padding: 24px 48px 12px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pub-row {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 20px 48px;
+      border-bottom: 0.5px solid var(--border);
+      transition: background 0.1s;
+    }
+
+    .pub-row:hover { background: rgba(28, 26, 23, 0.025); }
+
+    .pub-meta { flex: 1; }
+
+    .pub-venue-tag {
+      font-size: 11px;
+      color: var(--ink-light);
+      letter-spacing: 0.03em;
+      margin-bottom: 5px;
+    }
+
+    .pub-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+
+    .pub-authors {
+      font-size: 12px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .pub-authors strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .pub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+
+    .badge-award { background: var(--warning-bg); color: var(--warning-text); }
+    .badge-best  { background: var(--success-bg); color: var(--success-text); }
+
+    .pub-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .pub-actions a {
+      font-size: 11px;
+      color: var(--accent);
+      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      padding-bottom: 1px;
+      white-space: nowrap;
+      transition: border-color 0.15s;
+    }
+
+    .pub-actions a:hover { border-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      padding: 20px 48px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 13px;
+      color: var(--ink-light);
+    }
+
+    .footer-links { display: flex; gap: 18px; }
+
+    .footer-links a {
+      font-size: 11px;
+      color: var(--ink-light);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; align-items: center; }
+      .nav-name { font-size: 14px; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 12px; }
+      .page-header { padding: 28px 20px 20px; }
+      .year-heading { padding: 20px 20px 10px; }
+      .pub-row { padding: 16px 20px; flex-direction: column; gap: 10px; }
+      .pub-actions { flex-direction: row; align-items: flex-start; }
+      footer { padding: 18px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
+    }
+  </style>
 </head>
-
 <body>
-<div id="container">
 
-<div id="header">
-  <h1><a href="index.html">Laura M. Pfeifer Vardoulakis</a> </h1>
-</div>
+  <nav>
+    <a href="index.html" class="nav-name">Laura M. Vardoulakis</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="publications.html" class="active">Publications</a>
+    </div>
+  </nav>
 
-<div id="nav"> 
-	<table>
-    	<tr>
-        	<td><a href="index.html">Home</a></td>
-            <td><a href="research.html">Research</a></td>
-            <td><a href="publications.html"><u>Publications</u></a></td>
-            <td><a href="PfeiferVardoulakis_CV.pdf">CV</a></td>
-            <td><a href="dotdiva.html">Dot Diva</a></td>
-        </tr>
-    </table>
-</div>
+  <div class="page-header">
+    <h1>Publications</h1>
+    <p>A full list is also available on <a href="https://scholar.google.com/citations?user=uv0_jOoAAAAJ&hl=en" target="_blank">Google Scholar &rarr;</a></p>
+  </div>
 
-<div id="content"> 
-<h2>Publications</h2>
+  <!-- 2026 -->
+  <div class="year-group">
+    <div class="year-heading">2026</div>
 
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2026</div>
+        <div class="pub-title">Promise or Peril? Exploring Black Adults&rsquo; Perspectives on the Use of Artificial Intelligence in Health Contexts</div>
+        <div class="pub-authors">AG Parker, <strong>LM Vardoulakis</strong>, CN Harrington</div>
+        <div class="pub-tags"><span class="badge badge-best">Best paper</span></div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://dl.acm.org/doi/full/10.1145/3772318.3791451" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-Social Desirability Bias and Engagement in Systems Designed for Long-Term Health Tracking
-<div class="paperinfo">
-<em>PhD Dissertation</em>, 2013<br />
-Laura M. Vardoulakis<br />
-<a href="pub/LVardoulakisDissertation.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">International Journal of Human&ndash;Computer Interaction 2026</div>
+        <div class="pub-title">Revisiting the Six Human-Centered Artificial Intelligence Grand Challenges in the Age of Generative AI</div>
+        <div class="pub-authors">B Winslow, T Goyal, S Koon, G Margetis, G Salvendy, B Shneiderman, A Tayebi, <strong>LM Vardoulakis</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://www.tandfonline.com/doi/full/10.1080/10447318.2026.2641703" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-<h3>Conference Papers</h3>
-	
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Frontiers in Artificial Intelligence 2026</div>
+        <div class="pub-title">An experimental evaluation of an AI-powered interactive learning platform</div>
+        <div class="pub-authors">C Heldreth, D Akrong, <strong>LM Vardoulakis</strong>, NE Miller, Y Haramaty, L Belinsky, et al.</div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1783117" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-	
-A Human-Centered Evaluation of a Deep Learning System Deployed in Clinics for the Detection of Diabetic Retinopathy
-<div class="paperinfo">
-<em>CHI</em>, 2020, Honolulu, HI  Honorable Mention<br />
-Beede, E., Baylor, E., Hersch, F., Iurchenko, A., Wilcox, L., Ruamvibooonsuk, P., <strong>Vardoulakis, L.M.</strong><br /> 
-<a href="https://dl.acm.org/doi/abs/10.1145/3313831.3376718" target="_blank">open access pdf</a>
-</div>
-<br />
+  <!-- 2025 -->
+  <div class="year-group">
+    <div class="year-heading">2025</div>
 
-Using Mobile Phones to Present Medical Information to Hospital Patients
-<div class="paperinfo">
-<em>CHI</em>, 2012, Austin, TX<br />
-<strong>Pfeifer Vardoulakis, L</strong>., Karlson, A., Morris, D., Smith, G., Gatewood, J., Tan, D. <br /> 
-<a href="pub/CHI2012_MobileEMR.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2025</div>
+        <div class="pub-title">Participatory AI considerations for advancing racial health equity</div>
+        <div class="pub-authors">AG Parker, <strong>LM Vardoulakis</strong>, J Alla, CN Harrington</div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713165" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-Relational Agents Improve Engagement and Learning in Science Museum Visitors
-<div class="paperinfo">
-<em>Intelligent Virtual Agents</em>, 2011, Reykjavik, Iceland<br />
-Bickmore, T., <strong>Pfeifer, L</strong>., Schulman, D. <br /> 
-<a href="pub/IVA2011_Engagement.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2025 (Extended Abstracts)</div>
+        <div class="pub-title">Zoom in, Zoom out, Reframe: Domain Experts&rsquo; Strategies for Addressing Non-Experts&rsquo; Complex Questions</div>
+        <div class="pub-authors">B Freeman, R Ruparel, <strong>LM Vardoulakis</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-Is the Media Equation a Flash in the Pan? The Durability and Longevity of Social Responses to Computers<br />
-<div class="paperinfo">
-<em>CHI</em>, 2011, Vancouver, BC <br />
-<strong>Pfeifer, L</strong>., Bickmore, T.  <br /> 
-<a href="pub/CHI2011_MediaEquation.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">JMIR Human Factors 2025</div>
+        <div class="pub-title">User-Centered Delivery of AI-Powered Health Care Technologies in Clinical Settings: Mixed Methods Case Study</div>
+        <div class="pub-authors">M Schreier, R Brandt, H Brown, T Saensuksopa, C Silva, <strong>LM Vardoulakis</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://humanfactors.jmir.org/2025/1/e76241/" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-Should Agents Talk Like, um, Humans? The Use of Conversational Fillers by Virtual Agents <br />
-<div class="paperinfo">
-<em>Intelligent Virtual Agents</em>, 2009, Amsterdam<br />
-<strong>Pfeifer, L.</strong>, and Bickmore, T.<br />
-<a href="pub/IVA09_Fillers.pdf" target="_blank">pdf</a>
-</div>
-<br />
+  <!-- 2022 -->
+  <div class="year-group">
+    <div class="year-heading">2022</div>
 
-Taking the Time to Care: Empowering Low Health Literacy Hospital Patients with Virtual Nurse Agents<br />
-<div class="paperinfo">
-<em>CHI</em>, 2009, Boston, MA.<br />
-Bickmore, T., <strong>Pfeifer, L.</strong>, and Jack, B.<br />
-<a href="pub/CHI09.VirtualNurse.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">BMJ Health &amp; Care Informatics 2022</div>
+        <div class="pub-title">User-centred design for machine learning in health care: a case study from care management</div>
+        <div class="pub-authors">MG Seneviratne, RC Li, M Schreier, D Lopez-Martinez, BS Patel, A Yakubovich, JB Kemp, E Loreaux, P Gamble, K El-Khoury, <strong>L Vardoulakis</strong>, D Wong, J Desai, JH Chen, KE Morse, NL Downing, LT Finger, MJ Chen, N Shah</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-Health Document Explanation by Virtual Agents<br />
-<div class="paperinfo">
-<em>Intelligent Virtual Agents</em>, 2007, Paris, France<br />
-Bickmore, T., <strong>Pfeifer, L.</strong>, and Paasche-Orlow, M.<br />
-<a href="pub/IVA07-DocEx.pdf" target="_blank">pdf</a>
-</div>
-<br />
+  <!-- 2021 -->
+  <div class="year-group">
+    <div class="year-heading">2021</div>
 
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2021</div>
+        <div class="pub-title">Isolation in Coordination: Challenges of Caregivers in the USA</div>
+        <div class="pub-authors">M Schurgin, M Schlager, <strong>L Vardoulakis</strong>, LR Pina, L Wilcox</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-<h3>Journal Articles</h3>
+  <!-- 2020 -->
+  <div class="year-group">
+    <div class="year-heading">2020</div>
 
-Predicting inpatient medication orders from electronic health record data
-<div class="paperinfo">
-<em>Clinical Pharmacology & Therapeutics</em>, 2020<br />
-Rough, K., Dai, A.M., Zhang, K., Xue, Y., <strong>Vardoulakis, L.M.</strong>, Cui, C., Butte, A.J., Howell, M.D. and Rajkomar, A. <br />
-<a href="https://doi.org/10.1002/cpt.1826" target="_blank">open access pdf</a>
-</div>
-<br />		
-	
-Automatically Charting Symptoms From Patient-Physician Conversations Using Machine Learning
-<div class="paperinfo">
-<em>JAMA Internal Medicine</em>, 179(6):836–838, 2019<br />
-Rajkomar, A., Kannan, A., Chen, K., <strong>Vardoulakis, L.</strong>, Chou, K., Cui, C., Dean, J. <br />
-<a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2728955" target="_blank">open access pdf</a>
-</div>
-<br />	
-	
-Creating new technologies for companionable agents to support isolated older adults
-<div class="paperinfo">
-<em>ACM Transactions on Interactive Intelligent Systems (TiiS)</em>, 8(3):1-27, 2018<br />
-Sidner, C.L., Bickmore, T., Nooraie, B., Rich, C., Ring, L., Shayganfar, M. and <strong>Vardoulakis, L.</strong> <br />
-<a href="https://dl.acm.org/doi/abs/10.1145/3213050" target="_blank">link</a>
-</div>
-<br />		
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Clinical Pharmacology &amp; Therapeutics 2020</div>
+        <div class="pub-title">Predicting inpatient medication orders from electronic health record data</div>
+        <div class="pub-authors">K Rough, AM Dai, K Zhang, Y Xue, <strong>LM Vardoulakis</strong>, C Cui, AJ Butte, et al.</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-Response to a Relational Agent by Hospital Patients with Depressive Symptoms<br />
-<div class="paperinfo">
-<em>Interacting with Computers, special issue on Mental Health</em>, 22(4), 289-298, 2010<br />
-Bickmore, T., Mitchell, S., Jack, B., Paasche-Orlow, M., <strong>Pfeifer, L.</strong>, O'Donnell, J. <br />
-<a href="pub/IwC2010b.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2020</div>
+        <div class="pub-title">A human-centered evaluation of a deep learning system deployed in clinics for the detection of diabetic retinopathy</div>
+        <div class="pub-authors">E Beede, E Baylor, F Hersch, A Iurchenko, L Wilcox, P Ruamviboonsuk, <strong>LM Vardoulakis</strong></div>
+        <div class="pub-tags"><span class="badge badge-award">Honorable mention</span></div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3313831.3376718" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-Maintaining Reality: Relational Agents for Antipsychotic Medication Adherence <br />
-<div class="paperinfo">
-<em>Interacting with Computers, special issue on Mental Health</em>, 22(4), 276-288, 2010<br />
-Bickmore, T., Puskar., K, Schlenk, E., <strong>Pfeifer, L.</strong>, Sereika, S. <br />
-<a href="pub/IwC2010a.pdf" target="_blank">pdf</a>
-</div>
-<br />
+  <!-- 2019 -->
+  <div class="year-group">
+    <div class="year-heading">2019</div>
 
-Usability of Conversational Agents by Patients with Inadequate Health Literacy: Evidence from Two Clinical Trials <br />
-<div class="paperinfo">
-<em>Journal of Health Communication</em>, 15, 197-210, 2010<br />
-Bickmore, T., <strong>Pfeifer, L.</strong>, Byron, D., Forsythe, S., Henault, L., Jack, B., Silliman, R., Paasche-Orlow, M.<br />
-<a href="pub/HealthComm10.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">JAMA Internal Medicine 2019</div>
+        <div class="pub-title">Automatically Charting Symptoms From Patient-Physician Conversations Using Machine Learning</div>
+        <div class="pub-authors">A Rajkomar, A Kannan, K Chen, <strong>L Vardoulakis</strong>, K Chou, C Cui, J Dean</div>
+      </div>
+      <div class="pub-actions">
+        <a href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2728955" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-Using Computer Agents to Explain Medical Documents to Patients with Low Health Literacy<br />
-<div class="paperinfo">
-<em>Patient Education and Counseling</em>, 75(3), 315-320, 2009<br />
-Bickmore, T., <strong>Pfeifer, L.</strong>, and Paasche-Orlow, M. <br />
-<a href="pub/PEC09.pdf" target="_blank">pdf</a>
-</div>
-<br />
+  <!-- 2018 -->
+  <div class="year-group">
+    <div class="year-heading">2018</div>
 
-The Role of Gesture in Document Explanation by Embodied Conversational Agents<br />
-<div class="paperinfo">
-<em>International Journal of Semantic Computing</em>, 2(1), 47–70, 2008<br />
-Bickmore, T., <strong>Pfeifer, L.</strong> and Yin L.  <br />
-<a href="pub/SemanticComputing08.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">ACM Transactions on Interactive Intelligent Systems 2018</div>
+        <div class="pub-title">Creating new technologies for companionable agents to support isolated older adults</div>
+        <div class="pub-authors">CL Sidner, T Bickmore, B Nooraie, C Rich, L Ring, M Shayganfar, <strong>L Vardoulakis</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
+  <!-- 2017 -->
+  <div class="year-group">
+    <div class="year-heading">2017</div>
 
-<h3>Conference Workshops and Posters</h3>
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CSCW 2017 (Companion)</div>
+        <div class="pub-title">Personal Tasks at Work: An Exploration</div>
+        <div class="pub-authors">S McRoberts, <strong>L Vardoulakis</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-Personal Tasks at Work: An Exploration
-<div class="paperinfo">
-<em>CSCW</em>, 2017 <br />
-McRoberts, S. and <strong>Vardoulakis, L.</strong> <br />
-<a href="https://dl.acm.org/doi/abs/10.1145/3022198.3026330" target="_blank">link</a>
-</div>
-<br />
-	
-	
-Longitudinal Remote Follow-Up by Intelligent Conversational Agents for Post-Hospitalization <br />
-<div class="paperinfo">
-<em>AAAI Spring Symposium on Artificial Intelligence and Health Communication</em>, 2011, Palo Alto, CA. <br />
-<strong>Pfeifer, L.</strong>, Bickmore, T.  <br />
-<a href="pub/AAAISpring2011.pdf" target="_blank">pdf</a>
-</div>
-<br />
+  <!-- 2013 -->
+  <div class="year-group">
+    <div class="year-heading">2013</div>
 
-Designing Embodied Conversational Agents to Conduct Longitudinal Health Interviews<br />
-<div class="paperinfo">
-<em>Intelligent Virtual Agents</em>, 2010, Philadelphia, PA. <br />
-<strong>Pfeifer, L.</strong>, and Bickmore, T.<br />
-<a href="pub/IVA10.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Autonomous Agents and Multi-Agent Systems 2013</div>
+        <div class="pub-title">Tinker: a relational agent museum guide</div>
+        <div class="pub-authors">TW Bickmore, <strong>LMP Vardoulakis</strong>, D Schulman</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-Longitudinal Health Interviewing by Embodied Conversational Agents: Directions for Future Research<br />
-<div class="paperinfo">
-<em>AAAI Fall Symposium on Virtual Healthcare Interaction</em>, 2009, Washington D.C. <br />
-<strong>Pfeifer, L.</strong>, and Bickmore, T. <br />
-<a href="pub/AAAI09.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">IVA 2013</div>
+        <div class="pub-title">Automated promotion of technology acceptance by clinicians using relational agents</div>
+        <div class="pub-authors">T Bickmore, <strong>L Vardoulakis</strong>, B Jack, M Paasche-Orlow</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-Public Displays of Affect: Deploying Relational Agents in Public Spaces<br />
-<div class="paperinfo">
-<em>CHI Extended Abstracts</em>, 2008, Florence, Italy<br />
-Bickmore, T. and <strong>Pfeifer, L.</strong>, Schulman, D., Perera, S., Senanayake, C. and Nazmi, I. <br />
-<a href="pub/CHI08-MOS.pdf" target="_blank">pdf</a>
-</div>
-<br />
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">PhD Dissertation 2013</div>
+        <div class="pub-title">Social desirability bias and engagement in systems designed for long-term health tracking</div>
+        <div class="pub-authors"><strong>L Vardoulakis</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/LVardoulakisDissertation.pdf" target="_blank">Thesis &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-Relational Agents for Antipsychotic Medication Adherence <br />
-<div class="paperinfo">
-<em>CHI Workshop on Technology in Mental Health</em>, 2008, Florence, Italy<br />
-Bickmore, T. and <strong>Pfeifer, L</strong>.<br />
-<a href="pub/CHI08-mentalhealth.pdf" target="_blank">pdf</a>
-</div>
-<br />
+  <!-- 2012 -->
+  <div class="year-group">
+    <div class="year-heading">2012</div>
 
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">IVA 2012</div>
+        <div class="pub-title">Designing relational agents as long term social companions for older adults</div>
+        <div class="pub-authors"><strong>LP Vardoulakis</strong>, L Ring, B Barry, CL Sidner, T Bickmore</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">IVA 2012</div>
+        <div class="pub-title">Hospital buddy: A persistent emotional support companion agent for hospital patients</div>
+        <div class="pub-authors">T Bickmore, L Bukhari, <strong>LP Vardoulakis</strong>, M Paasche-Orlow, C Shanahan</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-</div>
-</div>
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2012</div>
+        <div class="pub-title">Using mobile phones to present medical information to hospital patients</div>
+        <div class="pub-authors"><strong>L Pfeifer Vardoulakis</strong>, A Karlson, D Morris, G Smith, J Gatewood, D Tan</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/CHI2012_MobileEMR.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2011 -->
+  <div class="year-group">
+    <div class="year-heading">2011</div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">IVA 2011</div>
+        <div class="pub-title">Relational agents improve engagement and learning in science museum visitors</div>
+        <div class="pub-authors">T Bickmore, <strong>L Pfeifer</strong>, D Schulman</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/IVA2011_Engagement.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2011</div>
+        <div class="pub-title">Is the media equation a flash in the pan? The durability and longevity of social responses to computers</div>
+        <div class="pub-authors"><strong>LM Pfeifer</strong>, T Bickmore</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/CHI2011_MediaEquation.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Annals of Behavioral Medicine 2011</div>
+        <div class="pub-title">Relational agents for promoting intervention engagement with underserved populations</div>
+        <div class="pub-authors">T Bickmore, D Schulman, <strong>L Pfeifer</strong>, L Yin</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">AAAI Spring Symposium 2011</div>
+        <div class="pub-title">Longitudinal Remote Follow-Up by Intelligent Conversational Agents for Post-Hospitalization Care</div>
+        <div class="pub-authors"><strong>LM Pfeifer</strong>, TW Bickmore</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/AAAISpring2011.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">AHRQ 2011</div>
+        <div class="pub-title">Virtual Patient Advocate to Reduce Ambulatory Adverse Drug Events</div>
+        <div class="pub-authors">B Jack, T Bickmore, VK Chetty, C Manasseh, J Martin, M Paasche-Orlow, <strong>L Pfeifer</strong>, et al.</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2010 -->
+  <div class="year-group">
+    <div class="year-heading">2010</div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Journal of Health Communication 2010</div>
+        <div class="pub-title">Usability of conversational agents by patients with inadequate health literacy: evidence from two clinical trials</div>
+        <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, D Byron, S Forsythe, LE Henault, BW Jack, et al.</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/HealthComm10.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Interacting with Computers 2010</div>
+        <div class="pub-title">Response to a relational agent by hospital patients with depressive symptoms</div>
+        <div class="pub-authors">TW Bickmore, SE Mitchell, BW Jack, MK Paasche-Orlow, <strong>LM Pfeifer</strong>, et al.</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/IwC2010a.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Interacting with Computers 2010</div>
+        <div class="pub-title">Maintaining reality: Relational agents for antipsychotic medication adherence</div>
+        <div class="pub-authors">TW Bickmore, K Puskar, EA Schlenk, <strong>LM Pfeifer</strong>, SM Sereika</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/IwC2010b.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">2010</div>
+        <div class="pub-title">Designing embodied conversational agents to conduct longitudinal health interviews</div>
+        <div class="pub-authors"><strong>LM Pfeifer</strong>, T Bickmore</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/IVA10.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2009 -->
+  <div class="year-group">
+    <div class="year-heading">2009</div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">IVA 2009</div>
+        <div class="pub-title">Should agents speak like, um, humans? The use of conversational fillers by virtual agents</div>
+        <div class="pub-authors"><strong>LM Pfeifer</strong>, T Bickmore</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/IVA09_Fillers.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Patient Education and Counseling 2009</div>
+        <div class="pub-title">Using computer agents to explain medical documents to patients with low health literacy</div>
+        <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, MK Paasche-Orlow</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/PEC09.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2009</div>
+        <div class="pub-title">Taking the time to care: empowering low health literacy hospital patients with virtual nurse agents</div>
+        <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, BW Jack</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/CHI09.VirtualNurse.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">AAAI Fall Symposium 2009</div>
+        <div class="pub-title">Longitudinal Health Interviewing by Embodied Conversational Agents: Directions for Future Research</div>
+        <div class="pub-authors"><strong>LM Pfeifer</strong>, TW Bickmore</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/AAAI09.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2008 -->
+  <div class="year-group">
+    <div class="year-heading">2008</div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2008 Workshop</div>
+        <div class="pub-title">Relational agents for antipsychotic medication adherence</div>
+        <div class="pub-authors">T Bickmore, <strong>L Pfeifer</strong></div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/CHI08-mentalhealth.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">CHI 2008 (Extended Abstracts)</div>
+        <div class="pub-title">Public displays of affect: deploying relational agents in public spaces</div>
+        <div class="pub-authors">TW Bickmore, <strong>L Pfeifer</strong>, D Schulman, S Perera, C Senanayake, I Nazmi</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/CHI08-MOS.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">International Journal of Semantic Computing 2008</div>
+        <div class="pub-title">The role of gesture in document explanation by embodied conversational agents</div>
+        <div class="pub-authors">T Bickmore, <strong>L Pfeifer</strong>, L Yin</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/SemanticComputing08_new.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">IVA 2008</div>
+        <div class="pub-title">Health document explanation by virtual agents</div>
+        <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, MK Paasche-Orlow</div>
+      </div>
+      <div class="pub-actions">
+        <a href="pub/IVA07-DocEx.pdf" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-name">Laura M. Vardoulakis</span>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=uv0_jOoAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/laura-vardoulakis/" target="_blank">LinkedIn</a>
+      <a href="https://research.google/people/105160/" target="_blank">Google Research</a>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -1,93 +1,377 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
-<title>Laura Pfeifer Vardoulakis</title>
-<script type="text/javascript">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laura M. Vardoulakis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-21079558-1']);
-  _gaq.push(['_trackPageview']);
+    :root {
+      --cream: #faf8f4;
+      --ink: #1c1a17;
+      --ink-mid: #5a5650;
+      --ink-light: #9a9590;
+      --border: rgba(28, 26, 23, 0.12);
+      --accent: #2e5fa3;
+      --success-bg: #f0f7ee;
+      --success-text: #2d6a2d;
+    }
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+    html { background: var(--cream); color: var(--ink); }
 
-</script>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 22px 48px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ink-mid);
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .nav-links a.active {
+      color: var(--ink);
+      border-bottom: 0.5px solid var(--ink);
+      padding-bottom: 1px;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      gap: 36px;
+      align-items: flex-start;
+      padding: 52px 48px 48px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 960px;
+    }
+
+    .photo {
+      width: 160px;
+      height: 200px;
+      border-radius: 14px;
+      background: #e8e4dc;
+      border: 0.5px solid var(--border);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-text { flex: 1; }
+
+    .hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .hero .bio {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--ink-mid);
+      max-width: 520px;
+      margin-bottom: 28px;
+    }
+
+    .bio a {
+      color: var(--accent);
+      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .bio a:hover { border-color: var(--accent); }
+
+    .hero-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-links a {
+      font-size: 12px;
+      color: var(--accent);
+      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .hero-links a:hover { border-color: var(--accent); }
+
+    /* SELECTED PUBS SECTION */
+    .section {
+      padding: 36px 48px;
+      border-bottom: 0.5px solid var(--border);
+      max-width: 960px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-light);
+      margin-bottom: 22px;
+    }
+
+    .pub-item {
+      padding: 18px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-venue {
+      font-size: 11px;
+      color: var(--ink-light);
+      margin-bottom: 5px;
+      letter-spacing: 0.03em;
+    }
+
+    .pub-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+
+    .pub-authors {
+      font-size: 12px;
+      color: var(--ink-mid);
+      margin-bottom: 8px;
+    }
+
+    .pub-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 20px;
+      background: var(--success-bg);
+      color: var(--success-text);
+    }
+
+    .pub-link {
+      font-size: 11px;
+      color: var(--accent);
+      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      padding-bottom: 1px;
+      transition: border-color 0.15s;
+    }
+
+    .pub-link:hover { border-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      margin-top: auto;
+      padding: 20px 48px;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 13px;
+      color: var(--ink-light);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      color: var(--ink-light);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      nav {
+        padding: 16px 20px;
+        align-items: center;
+      }
+
+      .nav-name { font-size: 14px; }
+      .nav-links { gap: 18px; }
+      .nav-links a { font-size: 12px; }
+
+      .hero {
+        flex-direction: column;
+        padding: 28px 20px 32px;
+        gap: 20px;
+      }
+
+      .photo {
+        width: 110px;
+        height: 138px;
+        border-radius: 10px;
+      }
+
+      .hero h1 { font-size: 28px; margin-bottom: 14px; }
+
+      .hero .bio {
+        font-size: 14px;
+        max-width: 100%;
+        margin-bottom: 22px;
+      }
+
+      .hero-links { gap: 14px; }
+
+      .section { padding: 28px 20px; }
+
+      footer {
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div id="container">
 
-<div id="header">
-  <h1><a href="index.html">Laura M. Pfeifer Vardoulakis</a> </h1>
-</div>
+  <nav>
+    <span class="nav-name">Laura M. Vardoulakis</span>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="publications.html">Publications</a>
+    </div>
+  </nav>
 
-<div id="nav"> 
-	<table>
-    	<tr>
-        	<td><a href="index.html"><u>Home</u></a></td>
-            <td><a href="research.html">Research</a></td>
-            <td><a href="publications.html">Publications</a></td>
-            <td><a href="PfeiferVardoulakis_CV.pdf">CV</a></td>
-            <td><a href="dotdiva.html">Dot Diva</a></td>
-        </tr>
-    </table>
-</div>
+  <div class="hero">
+    <div class="photo">
+      <img src="LV.jpg" alt="Laura M. Vardoulakis" />
+    </div>
+    <div class="hero-text">
+      <h1>Hello, I&rsquo;m Laura.</h1>
+      <p class="bio">I lead user experience research at <a href="https://research.google/people/105160/" target="_blank">Google Research</a>, working at the intersection of human-computer interaction and AI &mdash; with a particular focus on health. My work spans the design and real-world evaluation of AI-powered health technologies, human-centered approaches to AI in clinical settings, and the equity dimensions of AI: ensuring these systems are built with and for communities that have historically been left out of technology development. I hold a Ph.D. in Computer Science from Northeastern University.</p>
+      <div class="hero-links">
+        <a href="publications.html">View publications &rarr;</a>
+      </div>
+    </div>
+  </div>
 
-<div id="content"> 
-<h1>Hello</h1>
-<img src="me.jpg"/>
-<p>I completed <a href="pub/LVardoulakisDissertation.pdf" target="_blank">my phd</a> in computer science in March 2013, 
-	and currently lead user experience research at <a href="https://health.google/" target="_blank">Google Health</a>. 
-</p>
+  <div class="section">
+    <div class="section-label">Selected publications</div>
 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<H3>News</h3>
+    <div class="pub-item">
+      <div class="pub-venue">CHI 2026</div>
+      <div class="pub-title">Promise or Peril? Exploring Black Adults&rsquo; Perspectives on the Use of Artificial Intelligence in Health Contexts</div>
+      <div class="pub-meta-row">
+        <span class="badge">Best paper</span>
+        <a class="pub-link" href="https://dl.acm.org/doi/full/10.1145/3772318.3791451" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-<p>April 2020
-<br />
-Our paper, <a href="https://dl.acm.org/doi/abs/10.1145/3313831.3376718" target="_blank">A Human-Centered Evaluation of a Deep Learning System Deployed in Clinics for the Detection of Diabetic Retinopathy</a>, won an Honorable Mention at CHI 2020. Read more on the Google <a href="https://www.blog.google/technology/health/healthcare-ai-systems-put-people-center/" target="_blank">Keyword</a>.
-</p>
+    <div class="pub-item">
+      <div class="pub-venue">CHI 2025</div>
+      <div class="pub-title">Participatory AI considerations for advancing racial health equity</div>
+      <div class="pub-meta-row">
+        <a class="pub-link" href="https://dl.acm.org/doi/full/10.1145/3706598.3713165" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-<p>March 2020
-<br />
-Read more about our work using deep learning to assist health practitioners to identify potentially erroneous medication orders. <a href="https://ai.googleblog.com/2020/04/a-step-towards-protecting-patients-from.html">Blogpost</a>, <a href="https://ascpt.onlinelibrary.wiley.com/doi/10.1002/cpt.1826">Paper</a> 
-</p>
+    <div class="pub-item">
+      <div class="pub-venue">International Journal of Human&ndash;Computer Interaction 2026</div>
+      <div class="pub-title">Revisiting the Six Human-Centered Artificial Intelligence Grand Challenges in the Age of Generative AI</div>
+      <div class="pub-meta-row">
+        <a class="pub-link" href="https://www.tandfonline.com/doi/full/10.1080/10447318.2026.2641703" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
-	
-<p>March 2013
-<br />
-I defended my PhD dissertation - Social Desirability Bias and Engagement in Systems Designed for Long-Term Health Tracking 
-</p>
-<p>May 2012
-<br />
-Our <a href="http://dl.acm.org/citation.cfm?id=2208601" target="_blank">paper</a> on using mobile phones to give emergency department patients real-time access to their medical record was presented at <a href="http://chi2012.acm.org/" target="_blank">CHI 2012</a>. <br />
-</p>
-<p>November 2011
-<br />
-I attended the Grace Hopper Celebration of Women in Computing. </p>
-<p>September 2011
-<br />
-I completed my thesis proposal. </p>
-<p>August 2011
-<br />
-This past summer, I interned at <a href="https://research.microsoft.com/en-us/labs/redmond/default.aspx" target="_blank">MSR Redmond</a>, working with Amy Karlson, Dan Morris and Desney Tan on <a href="https://research.microsoft.com/en-us/um/redmond/groups/cue/patientdisplays/" target="_parent">Patient-Friendly Information Displays</a>. </p>
-<p>June 2011
-  <br />
-  Our Virtual Nurse Project was featured in the <a href="http://online.wsj.com/article/SB10001424052702304474804576369452547349050.html?mod=googlenews_wsj" target="_blank">Wall Street Journal</a>. </p>
-<p>May 2011
-<br />
-Our <a href="http://portal.acm.org/citation.cfm?id=1979055" target="_blank">note</a> on longitudinal social reactions to computers was presented at <a href="http://chi2011.org/" target="_blank">CHI 2011</a>. <br />
-</p> <br /></div>
-<div id="push"></div>
-</div>
+    <div class="pub-item">
+      <div class="pub-venue">JMIR Human Factors 2025</div>
+      <div class="pub-title">User-Centered Delivery of AI-Powered Health Care Technologies in Clinical Settings: Mixed Methods Case Study</div>
+      <div class="pub-meta-row">
+        <a class="pub-link" href="https://humanfactors.jmir.org/2025/1/e76241/" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
+    <div class="pub-item">
+      <div class="pub-venue">CHI 2020</div>
+      <div class="pub-title">A human-centered evaluation of a deep learning system deployed in clinics for the detection of diabetic retinopathy</div>
+      <div class="pub-meta-row">
+        <span class="badge">Honorable mention</span>
+        <a class="pub-link" href="https://dl.acm.org/doi/abs/10.1145/3313831.3376718" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-venue">JAMA Internal Medicine 2019</div>
+      <div class="pub-title">Automatically Charting Symptoms From Patient-Physician Conversations Using Machine Learning</div>
+      <div class="pub-meta-row">
+        <a class="pub-link" href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2728955" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-name">Laura M. Vardoulakis</span>
+    <div class="footer-links">
+      <a href="https://scholar.google.com/citations?user=uv0_jOoAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/laura-vardoulakis/" target="_blank">LinkedIn</a>
+      <a href="https://research.google/people/105160/" target="_blank">Google Research</a>
+    </div>
+  </footer>
 
 </body>
 </html>
