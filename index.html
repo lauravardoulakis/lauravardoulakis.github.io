@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Laura M. Vardoulakis</title>
+  <meta name="description" content="Laura M. Vardoulakis is a UX Research Lead at Google Research working at the intersection of human-computer interaction and AI, with a focus on health." />
+  <meta property="og:title" content="Laura M. Vardoulakis" />
+  <meta property="og:description" content="UX Research Lead at Google Research. Human-computer interaction, AI, and health equity." />
+  <meta property="og:url" content="https://lauravardoulakis.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231c1a17'/><text x='50%25' y='55%25' font-family='Georgia,serif' font-size='26' fill='%23faf8f4' text-anchor='middle' dominant-baseline='middle'>LV</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -13,12 +18,12 @@
     :root {
       --cream: #faf8f4;
       --ink: #1c1a17;
-      --ink-mid: #5a5650;
-      --ink-light: #9a9590;
-      --border: rgba(28, 26, 23, 0.12);
-      --accent: #2e5fa3;
-      --success-bg: #f0f7ee;
-      --success-text: #2d6a2d;
+      --ink-mid: #3d3a36;
+      --ink-light: #5a5650;
+      --border: rgba(28, 26, 23, 0.18);
+      --accent: #1e4a8a;
+      --success-bg: #e8f5e8;
+      --success-text: #1e5c1e;
     }
 
     html { background: var(--cream); color: var(--ink); }
@@ -57,7 +62,7 @@
     }
 
     .nav-links a {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 400;
       color: var(--ink-mid);
       letter-spacing: 0.04em;
@@ -75,16 +80,11 @@
     /* HERO */
     .hero {
       display: flex;
-      flex-direction: column;
+      gap: 36px;
+      align-items: flex-start;
       padding: 52px 48px 48px;
       border-bottom: 0.5px solid var(--border);
       max-width: 960px;
-    }
-
-    .hero-body {
-      display: flex;
-      gap: 36px;
-      align-items: flex-start;
     }
 
     .photo {
@@ -104,7 +104,7 @@
       object-position: center top;
     }
 
-    .hero-body .hero-text { flex: 1; }
+    .hero-text { flex: 1; }
 
     .hero h1 {
       font-family: 'EB Garamond', serif;
@@ -116,7 +116,7 @@
     }
 
     .hero .bio {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.85;
       color: var(--ink-mid);
       max-width: 520px;
@@ -139,7 +139,7 @@
     }
 
     .hero-links a {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--accent);
       border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
       padding-bottom: 1px;
@@ -156,7 +156,7 @@
     }
 
     .section-label {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -166,20 +166,20 @@
 
     .pub-item {
       padding: 18px 0;
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .pub-item:last-child { border-bottom: none; }
 
     .pub-venue {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ink-light);
       margin-bottom: 5px;
       letter-spacing: 0.03em;
     }
 
     .pub-title {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 500;
       color: var(--ink);
       margin-bottom: 5px;
@@ -187,7 +187,7 @@
     }
 
     .pub-authors {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--ink-mid);
       margin-bottom: 8px;
     }
@@ -201,7 +201,7 @@
 
     .badge {
       display: inline-block;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
       padding: 2px 9px;
       border-radius: 20px;
@@ -210,9 +210,9 @@
     }
 
     .pub-link {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--accent);
-      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      border-bottom: 1px solid rgba(30, 74, 138, 0.4);
       padding-bottom: 1px;
       transition: border-color 0.15s;
     }
@@ -231,7 +231,7 @@
 
     .footer-name {
       font-family: 'EB Garamond', serif;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--ink-light);
     }
 
@@ -241,7 +241,7 @@
     }
 
     .footer-links a {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--ink-light);
       transition: color 0.15s;
     }
@@ -257,14 +257,11 @@
 
       .nav-name { font-size: 14px; }
       .nav-links { gap: 18px; }
-      .nav-links a { font-size: 12px; }
+      .nav-links a { font-size: 13px; }
 
       .hero {
-        padding: 28px 20px 32px;
-      }
-
-      .hero-body {
         flex-direction: column;
+        padding: 28px 20px 32px;
         gap: 20px;
       }
 
@@ -306,16 +303,14 @@
   </nav>
 
   <div class="hero">
-    <h1>Hello, I&rsquo;m Laura.</h1>
-    <div class="hero-body">
-      <div class="hero-text">
-        <p class="bio">I lead user experience research at <a href="https://research.google/people/105160/" target="_blank">Google Research</a>, working at the intersection of human-computer interaction and AI &mdash; with a particular focus on health. My work spans the design and real-world evaluation of AI-powered health technologies, human-centered approaches to AI in clinical settings, and the equity dimensions of AI: ensuring these systems are built with and for communities that have historically been left out of technology development. I hold a Ph.D. in Computer Science from Northeastern University.</p>
-        <div class="hero-links">
-          <a href="publications.html">View publications &rarr;</a>
-        </div>
-      </div>
-      <div class="photo">
-        <img src="LV.jpg" alt="Laura M. Vardoulakis" />
+    <div class="photo">
+      <img src="LV.jpg" alt="Laura M. Vardoulakis" />
+    </div>
+    <div class="hero-text">
+      <h1>Hello, I&rsquo;m Laura.</h1>
+      <p class="bio">I lead user experience research at <a href="https://research.google/people/105160/" target="_blank">Google Research</a>, working at the intersection of human-computer interaction and AI &mdash; with a particular focus on health. My work spans the design and real-world evaluation of AI-powered health technologies, human-centered approaches to AI in clinical settings, and the equity dimensions of AI: ensuring these systems are built with and for communities that have historically been left out of technology development. I hold a Ph.D. in Computer Science from Northeastern University.</p>
+      <div class="hero-links">
+        <a href="publications.html">View publications &rarr;</a>
       </div>
     </div>
   </div>
@@ -372,6 +367,9 @@
         <a class="pub-link" href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2728955" target="_blank">Paper &rarr;</a>
       </div>
     </div>
+  </div>
+  <div style="padding: 20px 48px 36px; max-width: 960px;">
+    <a href="publications.html" style="font-family:'DM Sans',sans-serif;font-size:12px;color:var(--accent);border-bottom:0.5px solid rgba(46,95,163,0.4);padding-bottom:1px;">See all publications &rarr;</a>
   </div>
 
   <footer>

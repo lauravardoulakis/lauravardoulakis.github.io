@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Publications &mdash; Laura M. Vardoulakis</title>
+  <meta name="description" content="Full list of publications by Laura M. Vardoulakis, UX Research Lead at Google Research." />
+  <meta property="og:title" content="Publications — Laura M. Vardoulakis" />
+  <meta property="og:description" content="Full list of publications by Laura M. Vardoulakis, UX Research Lead at Google Research." />
+  <meta property="og:url" content="https://lauravardoulakis.github.io/publications.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231c1a17'/><text x='50%25' y='55%25' font-family='Georgia,serif' font-size='26' fill='%23faf8f4' text-anchor='middle' dominant-baseline='middle'>LV</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -13,14 +18,14 @@
     :root {
       --cream: #faf8f4;
       --ink: #1c1a17;
-      --ink-mid: #5a5650;
-      --ink-light: #9a9590;
-      --border: rgba(28, 26, 23, 0.12);
-      --accent: #2e5fa3;
-      --success-bg: #f0f7ee;
-      --success-text: #2d6a2d;
-      --warning-bg: #fdf6e3;
-      --warning-text: #7a5c00;
+      --ink-mid: #3d3a36;
+      --ink-light: #5a5650;
+      --border: rgba(28, 26, 23, 0.18);
+      --accent: #1e4a8a;
+      --success-bg: #e8f5e8;
+      --success-text: #1e5c1e;
+      --warning-bg: #fdf0d0;
+      --warning-text: #6b4c00;
     }
 
     html { background: var(--cream); color: var(--ink); }
@@ -42,7 +47,7 @@
       justify-content: space-between;
       align-items: baseline;
       padding: 22px 48px;
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-name {
@@ -56,7 +61,7 @@
     .nav-links { display: flex; gap: 28px; }
 
     .nav-links a {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 400;
       color: var(--ink-mid);
       letter-spacing: 0.04em;
@@ -74,7 +79,7 @@
     /* PAGE HEADER */
     .page-header {
       padding: 48px 48px 36px;
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
       max-width: 960px;
     }
 
@@ -87,14 +92,14 @@
     }
 
     .page-header p {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--ink-mid);
       line-height: 1.7;
     }
 
     .page-header p a {
       color: var(--accent);
-      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      border-bottom: 0.5px solid rgba(30, 74, 138, 0.4);
       padding-bottom: 1px;
       transition: border-color 0.15s;
     }
@@ -105,13 +110,13 @@
     .year-group { max-width: 960px; }
 
     .year-heading {
-      font-size: 11px;
+      font-size: 15px;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--ink-light);
       padding: 24px 48px 12px;
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .pub-row {
@@ -119,7 +124,7 @@
       gap: 24px;
       align-items: flex-start;
       padding: 20px 48px;
-      border-bottom: 0.5px solid var(--border);
+      border-bottom: 1px solid var(--border);
       transition: background 0.1s;
     }
 
@@ -128,14 +133,14 @@
     .pub-meta { flex: 1; }
 
     .pub-venue-tag {
-      font-size: 11px;
+      font-size: 15px;
       color: var(--ink-light);
       letter-spacing: 0.03em;
       margin-bottom: 5px;
     }
 
     .pub-title {
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 500;
       color: var(--ink);
       line-height: 1.5;
@@ -143,7 +148,7 @@
     }
 
     .pub-authors {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--ink-mid);
       line-height: 1.6;
       margin-bottom: 6px;
@@ -158,7 +163,7 @@
 
     .badge {
       display: inline-block;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
       padding: 2px 9px;
       border-radius: 20px;
@@ -177,9 +182,9 @@
     }
 
     .pub-actions a {
-      font-size: 11px;
+      font-size: 15px;
       color: var(--accent);
-      border-bottom: 0.5px solid rgba(46, 95, 163, 0.4);
+      border-bottom: 0.5px solid rgba(30, 74, 138, 0.4);
       padding-bottom: 1px;
       white-space: nowrap;
       transition: border-color 0.15s;
@@ -191,7 +196,7 @@
     footer {
       margin-top: auto;
       padding: 20px 48px;
-      border-top: 0.5px solid var(--border);
+      border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -199,14 +204,14 @@
 
     .footer-name {
       font-family: 'EB Garamond', serif;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--ink-light);
     }
 
     .footer-links { display: flex; gap: 18px; }
 
     .footer-links a {
-      font-size: 11px;
+      font-size: 15px;
       color: var(--ink-light);
       transition: color 0.15s;
     }
@@ -438,7 +443,7 @@
         <div class="pub-authors">TW Bickmore, <strong>LMP Vardoulakis</strong>, D Schulman</div>
       </div>
       <div class="pub-actions">
-        <a href="https://link.springer.com/article/10.1007/s10458-012-9216-7" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -449,7 +454,7 @@
         <div class="pub-authors">T Bickmore, <strong>L Vardoulakis</strong>, B Jack, M Paasche-Orlow</div>
       </div>
       <div class="pub-actions">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-642-40415-3_6" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -460,7 +465,7 @@
         <div class="pub-authors"><strong>L Vardoulakis</strong></div>
       </div>
       <div class="pub-actions">
-        <a href="pub/LVardoulakisDissertation.pdf" target="_blank">Thesis &rarr;</a>
+        <a href="#" target="_blank">Thesis &rarr;</a>
       </div>
     </div>
   </div>
@@ -476,7 +481,7 @@
         <div class="pub-authors"><strong>LP Vardoulakis</strong>, L Ring, B Barry, CL Sidner, T Bickmore</div>
       </div>
       <div class="pub-actions">
-        <a href="https://link.springer.com/chapter/10.1007/978-3-642-33197-8_30" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -487,7 +492,7 @@
         <div class="pub-authors">T Bickmore, L Bukhari, <strong>LP Vardoulakis</strong>, M Paasche-Orlow, C Shanahan</div>
       </div>
       <div class="pub-actions">
-        <a href="https://dl.acm.org/doi/10.1007/978-3-642-33197-8_56" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -498,7 +503,7 @@
         <div class="pub-authors"><strong>L Pfeifer Vardoulakis</strong>, A Karlson, D Morris, G Smith, J Gatewood, D Tan</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/CHI2012_MobileEMR.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
   </div>
@@ -514,7 +519,7 @@
         <div class="pub-authors">T Bickmore, <strong>L Pfeifer</strong>, D Schulman</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/IVA2011_Engagement.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -525,10 +530,20 @@
         <div class="pub-authors"><strong>LM Pfeifer</strong>, T Bickmore</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/CHI2011_MediaEquation.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
+    <div class="pub-row">
+      <div class="pub-meta">
+        <div class="pub-venue-tag">Annals of Behavioral Medicine 2011</div>
+        <div class="pub-title">Relational agents for promoting intervention engagement with underserved populations</div>
+        <div class="pub-authors">T Bickmore, D Schulman, <strong>L Pfeifer</strong>, L Yin</div>
+      </div>
+      <div class="pub-actions">
+        <a href="#" target="_blank">Paper &rarr;</a>
+      </div>
+    </div>
 
     <div class="pub-row">
       <div class="pub-meta">
@@ -537,7 +552,7 @@
         <div class="pub-authors"><strong>LM Pfeifer</strong>, TW Bickmore</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/AAAISpring2011.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -548,7 +563,7 @@
         <div class="pub-authors">B Jack, T Bickmore, VK Chetty, C Manasseh, J Martin, M Paasche-Orlow, <strong>L Pfeifer</strong>, et al.</div>
       </div>
       <div class="pub-actions">
-        <a href="https://digital.ahrq.gov/sites/default/files/docs/publication/r18hs017196-jack-final-report-2011.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
   </div>
@@ -564,7 +579,7 @@
         <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, D Byron, S Forsythe, LE Henault, BW Jack, et al.</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/HealthComm10.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -575,7 +590,7 @@
         <div class="pub-authors">TW Bickmore, SE Mitchell, BW Jack, MK Paasche-Orlow, <strong>LM Pfeifer</strong>, et al.</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/IwC2010b.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -586,7 +601,7 @@
         <div class="pub-authors">TW Bickmore, K Puskar, EA Schlenk, <strong>LM Pfeifer</strong>, SM Sereika</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/IwC2010a.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -597,7 +612,7 @@
         <div class="pub-authors"><strong>LM Pfeifer</strong>, T Bickmore</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/IVA10.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
   </div>
@@ -613,7 +628,7 @@
         <div class="pub-authors"><strong>LM Pfeifer</strong>, T Bickmore</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/IVA09_Fillers.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -624,7 +639,7 @@
         <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, MK Paasche-Orlow</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/PEC09.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -635,7 +650,7 @@
         <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, BW Jack</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/CHI09.VirtualNurse.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -646,7 +661,7 @@
         <div class="pub-authors"><strong>LM Pfeifer</strong>, TW Bickmore</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/AAAI09.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
   </div>
@@ -662,7 +677,7 @@
         <div class="pub-authors">T Bickmore, <strong>L Pfeifer</strong></div>
       </div>
       <div class="pub-actions">
-        <a href="pub/CHI08-mentalhealth.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -673,7 +688,7 @@
         <div class="pub-authors">TW Bickmore, <strong>L Pfeifer</strong>, D Schulman, S Perera, C Senanayake, I Nazmi</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/CHI08-MOS.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -684,7 +699,7 @@
         <div class="pub-authors">T Bickmore, <strong>L Pfeifer</strong>, L Yin</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/SemanticComputing08_new.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
 
@@ -695,7 +710,7 @@
         <div class="pub-authors">TW Bickmore, <strong>LM Pfeifer</strong>, MK Paasche-Orlow</div>
       </div>
       <div class="pub-actions">
-        <a href="pub/IVA07-DocEx.pdf" target="_blank">Paper &rarr;</a>
+        <a href="#" target="_blank">Paper &rarr;</a>
       </div>
     </div>
   </div>
